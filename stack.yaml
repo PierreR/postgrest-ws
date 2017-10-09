@@ -1,5 +1,10 @@
-resolver: lts-9.6
-extra-deps:
-    - protolude-0.2
+resolver: ghc-8.0.2
+system-ghc: true
+skip-ghc-check: true
 ghc-options:
-  postgrest-ws: -O2 -Wall -fwarn-identities -fno-warn-redundant-constraints
+  postgrest: -O2 -Wall -fwarn-identities -fno-warn-redundant-constraints
+packages:
+- '.'
+nix:
+  enable: false
+  packages: [postgresql, zlib]
